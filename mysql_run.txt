@@ -1,0 +1,14 @@
+CREATE TABLE Users(
+    user_id INT PRIMARY KEY AUTO_INCREMENT,
+    user_email VARCHAR(30) UNIQUE NOT NULL,
+    user_password VARCHAR(30) DEFAULT '1234567879' NOT NULL,
+    user_rol INT DEFAULT 1
+);
+
+INSERT INTO Users(
+    user_email,
+    user_rol
+)VALUES(
+    'lucascamino95@gmail.com',
+    0
+);

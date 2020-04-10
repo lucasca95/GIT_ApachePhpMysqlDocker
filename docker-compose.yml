@@ -1,0 +1,35 @@
+version: "3"
+services:
+    web:
+        build: .
+        image: phpapacheimg
+        container_name: phpapachecont
+        ports:
+            - "80:80"
+        volumes:
+            - ./php:/var/www/html/
+        depends_on: 
+            - db
+    db:
+        image: mysql:8
+        command: --default-authentication-plugin=mysql_native_password
+        restart: always
+        ports:
+            - 3306:3306
+        volumes:
+            - mysql_db_vol:/var/lib/mysql
+        environment:
+            MYSQL_DATABASE: db_test
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_USER: LucasAgustinCamino
+            MYSQL_PASSWORD: lucascamino95@gmail.com
+
+    control:
+        image: phpmyadmin/phpmyadmin
+        ports: 
+            - "8080:80"
+        environment: 
+            MYSQL_ROOT_PASSWORD: root
+
+volumes:
+    mysql_db_vol:
