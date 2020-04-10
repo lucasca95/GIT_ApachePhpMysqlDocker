@@ -3,8 +3,3 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
 }
-
-#prueba{
-    display: flex;
-    justify-content:flex-end; 
-}
