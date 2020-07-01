@@ -2,8 +2,8 @@
     $db_host = 'db';        // database service name from docker-compose.yml
     $db_name = 'db_test';   // database name
 
-    $db_user = 'LucasAgustinCamino';        // database user name
-    $db_pass = 'lucascamino95@gmail.com';   // database user password
+    $db_user = 'lucascamino95@gmail.com';   // database user name
+    $db_pass = '1234';                      // database user password
     
     $conn = new mysqli($db_host, $db_user, $db_pass, $db_name);
     $db_connected = 0;
